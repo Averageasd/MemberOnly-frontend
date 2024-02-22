@@ -141,10 +141,10 @@ function App() {
         try {
             const apiData = await fetch("https://member-only-backend.vercel.app/message/get", {
                 method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
+                // headers: {
+                //     Accept: 'application/json',
+                //     'Content-Type': 'application/json',
+                // },
                 mode: 'cors',
                 credentials: 'include',
             });
