@@ -139,7 +139,7 @@ function App() {
 
     async function getMessages() {
         try {
-            const apiData = await fetch("https://member-only-backend.vercel.app/message/get", {
+            const apiData = await fetch("http://member-only-backend.vercel.app/message/get", {
                 method: 'GET',
                 headers: {
                     Accept: 'application/json',
