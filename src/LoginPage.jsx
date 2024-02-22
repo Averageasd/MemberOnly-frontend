@@ -8,7 +8,7 @@ export function LoginPage({loginUser, user, loginFailMsg}) {
         return (
             <section>
                 <h2 className="section-title">Log in form</h2>
-                <form className="form login-signup-form" method="POST" onSubmit={loginUser} action="http://localhost:3000/login">
+                <form className="form login-signup-form" method="POST" onSubmit={loginUser} action="https://member-only-backend.vercel.app/login">
                     <div>
                         <label>
                             username

@@ -12,7 +12,7 @@ export function Dashboard({user, messages, deleteMessage}) {
                                     e.preventDefault();
                                     deleteMessage(message.id)
                                 }}
-                                action={`http://localhost:3000/message/delete/${message.id}`}
+                                action={`https://member-only-backend.vercel.app/message/delete/${message.id}`}
                             >
                                 <input type="hidden" value={message.title} name="title"/>
                                 <input type="hidden" value={message.message} name="message"/>

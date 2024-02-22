@@ -54,12 +54,8 @@ function App() {
 
     function signupUser(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/signup", {
+        fetch("https://member-only-backend.vercel.app/signup", {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
             mode: 'cors',
             credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
@@ -79,12 +75,8 @@ function App() {
 
     function loginUser(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/login", {
+        fetch("https://member-only-backend.vercel.app/login", {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
             mode: 'cors',
             credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
@@ -116,12 +108,8 @@ function App() {
     }
 
     function logoutUser() {
-        fetch("http://localhost:3000/logout", {
+        fetch("https://member-only-backend.vercel.app/logout", {
             method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
             mode: 'cors',
             credentials: 'include',
         }).then(r => {
@@ -141,10 +129,6 @@ function App() {
         try {
             const apiData = await fetch("https://member-only-backend.vercel.app/message/get", {
                 method: 'GET',
-                // headers: {
-                //     Accept: 'application/json',
-                //     'Content-Type': 'application/json',
-                // },
                 mode: 'cors',
                 credentials: 'include',
             });
@@ -157,12 +141,8 @@ function App() {
 
     function createMessage(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/message/create", {
+        fetch("https://member-only-backend.vercel.app/message/create", {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
             mode: 'cors',
             credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
@@ -175,12 +155,8 @@ function App() {
     }
 
     function deleteMessage(id) {
-        fetch(`http://localhost:3000/message/delete/${id}`, {
+        fetch(`https://member-only-backend.vercel.app/message/delete/${id}`, {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
             mode: 'cors',
             credentials: 'include'
         }).then((r) => {
@@ -193,7 +169,7 @@ function App() {
     }
 
     function updateMembershipStatus(e, id) {
-        fetch(`http://localhost:3000/member/${id}`, {
+        fetch(`https://member-only-backend.vercel.app/member/${id}`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
