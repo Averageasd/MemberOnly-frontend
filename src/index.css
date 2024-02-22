@@ -1,0 +1,188 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --bg-color: #f8f9fa;
+
+    --submit-btn-bg-color: #2d6a4f;
+
+    --accent-membership-link: forestgreen;
+    --accent-message-create: dodgerblue;
+    --accent-error: indianred;
+
+    --divide-border-color: #f8f9fa;
+
+    --nav-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    --post-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    --form-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+ul {
+    list-style: none;
+}
+
+hr {
+    border-color: var(--divide-border-color);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.create-message-link {
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0 auto;
+}
+
+.form {
+    max-width: 600px;
+    margin-top: 1rem;
+    padding: 2rem 2.5rem;
+    background-color: white;
+    box-shadow: var(--form-box-shadow);
+}
+
+.form > *:not(:first-child) {
+    margin-top: 1rem;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 0.25rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.form__button {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    min-width: 10rem;
+    border: none;
+    color: white;
+    background-color: var(--submit-btn-bg-color);
+}
+
+.nav {
+    position: relative;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.nav__membership {
+    color: var(--accent-membership-link);
+}
+
+.nav__logout {
+    color: var(--accent-error);
+}
+
+.nav__create-message {
+    color: var(--accent-message-create);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    position: sticky;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    box-shadow: var(--nav-box-shadow);
+}
+
+.header__welcome > p:nth-last-child(1) {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.container {
+    padding: 3rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.message-list {
+    padding-top: 1.5rem;
+}
+
+.message-list__message {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: var(--post-box-shadow);
+}
+
+.message-list__message:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.message-list__author > span {
+    font-weight: 600;
+}
+
+.message-list__date {
+    font-size: 0.6rem;
+}
+
+.delete-btn {
+    background-color: var(--accent-error);
+    border: none;
+    color: white;
+    padding: 0.25rem;
+    min-width: 6rem;
+    margin-top: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .nav > ul {
+        display: flex;
+        padding: 0;
+        gap: 1rem;
+    }
+}
