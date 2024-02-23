@@ -1,5 +1,12 @@
 # Private Club
 
+### Screenshot
+
+[screenshot1](screenshot1.png)
+
+[screenshot2](screenshot2.png)
+
+
 ### About
 Private club app where users can post and see other messages. if users are not member of the
 club, they cannot see authors and posted dates of the messages. Users can become official members
@@ -17,4 +24,6 @@ the app to Railway due to many different reasons. However, it will be available 
 
 ### Demo
 [Watch the video](PrivateClubDemo.mkv)
+
+
 
