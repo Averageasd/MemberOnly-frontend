@@ -2,7 +2,7 @@ export function SignupPage({signupUser}) {
     return (
         <section>
             <h2 className="section-title">Sign up Form</h2>
-            <form className="form login-signup-form" method="POST" onSubmit={signupUser} action="https://member-only-backend.vercel.app/signup">
+            <form className="form login-signup-form" method="POST" onSubmit={signupUser} action="https://memberonly-backend-production.up.railway.app/signup">
                 <div>
                     <label>
                         username

@@ -5,7 +5,7 @@ export function MembershipStatusUpdate({user, updateMembershipStatus, answerSecr
             <form
                 className="form update-status-form"
                 method="POST"
-                action={`https://member-only-backend.vercel.app/member/${user._id}`}
+                action={`https://memberonly-backend-production.up.railway.app/member/${user._id}`}
                 onSubmit={(e) => {
                     e.preventDefault();
                     updateMembershipStatus(e, user._id)

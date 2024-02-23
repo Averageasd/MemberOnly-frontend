@@ -54,7 +54,7 @@ function App() {
 
     function signupUser(e) {
         e.preventDefault();
-        fetch("https://member-only-backend.vercel.app/signup", {
+        fetch("https://memberonly-backend-production.up.railway.app/signup", {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',
@@ -75,7 +75,7 @@ function App() {
 
     function loginUser(e) {
         e.preventDefault();
-        fetch("https://member-only-backend.vercel.app/login", {
+        fetch("https://memberonly-backend-production.up.railway.app/login", {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',
@@ -108,7 +108,7 @@ function App() {
     }
 
     function logoutUser() {
-        fetch("https://member-only-backend.vercel.app/logout", {
+        fetch("https://memberonly-backend-production.up.railway.app/logout", {
             method: 'GET',
             mode: 'cors',
             credentials: 'include',
@@ -127,7 +127,7 @@ function App() {
 
     async function getMessages() {
         try {
-            const apiData = await fetch("https://member-only-backend.vercel.app/message/get", {
+            const apiData = await fetch("https://memberonly-backend-production.up.railway.app/message/get", {
                 method: 'GET',
                 mode: 'cors',
                 credentials: 'include',
@@ -141,7 +141,7 @@ function App() {
 
     function createMessage(e) {
         e.preventDefault();
-        fetch("https://member-only-backend.vercel.app/message/create", {
+        fetch("https://memberonly-backend-production.up.railway.app/message/create", {
             method: 'POST',
             mode: 'cors',
             credentials: 'include',
@@ -155,7 +155,7 @@ function App() {
     }
 
     function deleteMessage(id) {
-        fetch(`https://member-only-backend.vercel.app/message/delete/${id}`, {
+        fetch(`https://memberonly-backend-production.up.railway.app/delete/${id}`, {
             method: 'POST',
             mode: 'cors',
             credentials: 'include'
@@ -169,7 +169,7 @@ function App() {
     }
 
     function updateMembershipStatus(e, id) {
-        fetch(`https://member-only-backend.vercel.app/member/${id}`, {
+        fetch(`https://memberonly-backend-production.up.railway.app/member/${id}`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

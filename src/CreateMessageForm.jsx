@@ -2,7 +2,7 @@ export function CreateMessageForm({createMessage}) {
     return (
         <section>
             <h2>Create a message</h2>
-            <form className="form create-message-form" method="POST" onSubmit={createMessage} action="https://member-only-backend.vercel.app/message/create">
+            <form className="form create-message-form" method="POST" onSubmit={createMessage} action="https://memberonly-backend-production.up.railway.app/message/create">
                 <div>
                     <label>
                         title
