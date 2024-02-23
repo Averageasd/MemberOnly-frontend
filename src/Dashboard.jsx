@@ -1,3 +1,5 @@
+import {basedAPI} from "./apiConstant.js";
+
 export function Dashboard({user, messages, deleteMessage}) {
     return (
         <>
@@ -12,7 +14,7 @@ export function Dashboard({user, messages, deleteMessage}) {
                                     e.preventDefault();
                                     deleteMessage(message.id)
                                 }}
-                                action={`https://memberonly-backend-production.up.railway.app/delete/${message.id}`}
+                                action={`${basedAPI}/message/delete/${message.id}`}
                             >
                                 <input type="hidden" value={message.title} name="title"/>
                                 <input type="hidden" value={message.message} name="message"/>

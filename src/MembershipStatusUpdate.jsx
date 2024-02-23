@@ -1,3 +1,5 @@
+import {basedAPI} from "./apiConstant.js";
+
 export function MembershipStatusUpdate({user, updateMembershipStatus, answerSecretCode, secretCodeCheck}) {
     return (
         <section>
@@ -5,7 +7,7 @@ export function MembershipStatusUpdate({user, updateMembershipStatus, answerSecr
             <form
                 className="form update-status-form"
                 method="POST"
-                action={`https://memberonly-backend-production.up.railway.app/member/${user._id}`}
+                action={`${basedAPI}/member/${user._id}`}
                 onSubmit={(e) => {
                     e.preventDefault();
                     updateMembershipStatus(e, user._id)

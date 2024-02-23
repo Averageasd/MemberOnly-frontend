@@ -9,6 +9,7 @@ import {CreateMessageForm} from "./CreateMessageForm.jsx";
 import {DateTime} from "luxon";
 import {MembershipStatusUpdate} from "./MembershipStatusUpdate.jsx";
 import {Nav} from "./Nav.jsx";
+import {basedAPI} from "./apiConstant.js";
 
 function App() {
     const navigate = useNavigate();
@@ -54,7 +55,11 @@ function App() {
 
     function signupUser(e) {
         e.preventDefault();
-        fetch("https://memberonly-backend-production.up.railway.app/signup", {
+        fetch(`${basedAPI}/signup`, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
             method: 'POST',
             mode: 'cors',
             credentials: 'include',
@@ -75,10 +80,15 @@ function App() {
 
     function loginUser(e) {
         e.preventDefault();
-        fetch("https://memberonly-backend-production.up.railway.app/login", {
+        fetch(`${basedAPI}/login`, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
             method: 'POST',
             mode: 'cors',
             body: JSON.stringify(getFormElements(e)),
+            credentials: 'include',
         }).then(r => {
             return r.json();
         }).then(res => {
@@ -107,7 +117,11 @@ function App() {
     }
 
     function logoutUser() {
-        fetch("https://memberonly-backend-production.up.railway.app/logout", {
+        fetch(`${basedAPI}/logout`, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
             method: 'GET',
             mode: 'cors',
             credentials: 'include',
@@ -126,7 +140,11 @@ function App() {
 
     async function getMessages() {
         try {
-            const apiData = await fetch("https://memberonly-backend-production.up.railway.app/message/get", {
+            const apiData = await fetch(`${basedAPI}/message/get`, {
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                },
                 method: 'GET',
                 mode: 'cors',
                 credentials: 'include',
@@ -140,9 +158,14 @@ function App() {
 
     function createMessage(e) {
         e.preventDefault();
-        fetch("https://memberonly-backend-production.up.railway.app/message/create", {
+        fetch(`${basedAPI}/message/create`, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
             method: 'POST',
             mode: 'cors',
+            credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
         }).then((r) => {
             setCanFetch(true);
@@ -153,7 +176,11 @@ function App() {
     }
 
     function deleteMessage(id) {
-        fetch(`https://memberonly-backend-production.up.railway.app/delete/${id}`, {
+        fetch(`${basedAPI}/message/delete/${id}`, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
             method: 'POST',
             mode: 'cors',
             credentials: 'include'
@@ -167,12 +194,12 @@ function App() {
     }
 
     function updateMembershipStatus(e, id) {
-        fetch(`https://memberonly-backend-production.up.railway.app/member/${id}`, {
-            method: 'POST',
+        fetch(`${basedAPI}/member/${id}`, {
             headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
+                "Accept": "application/json",
+                "Content-Type": "application/json",
             },
+            method: 'POST',
             body: JSON.stringify(getFormElements(e)),
             mode: 'cors',
             credentials: 'include'

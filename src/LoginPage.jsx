@@ -1,4 +1,5 @@
 import {Navigate} from "react-router-dom";
+import {basedAPI} from "./apiConstant.js";
 
 export function LoginPage({loginUser, user, loginFailMsg}) {
     if (user) {
@@ -8,7 +9,8 @@ export function LoginPage({loginUser, user, loginFailMsg}) {
         return (
             <section>
                 <h2 className="section-title">Log in form</h2>
-                <form className="form login-signup-form" method="POST" onSubmit={loginUser} action="https://memberonly-backend-production.up.railway.app/login">
+                <form className="form login-signup-form" method="POST" onSubmit={loginUser}
+                      action={`${basedAPI}/login`}>
                     <div>
                         <label>
                             username
