@@ -78,7 +78,6 @@ function App() {
         fetch("https://memberonly-backend-production.up.railway.app/login", {
             method: 'POST',
             mode: 'cors',
-            credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
         }).then(r => {
             return r.json();
