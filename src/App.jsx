@@ -144,7 +144,6 @@ function App() {
         fetch("https://memberonly-backend-production.up.railway.app/message/create", {
             method: 'POST',
             mode: 'cors',
-            credentials: 'include',
             body: JSON.stringify(getFormElements(e)),
         }).then((r) => {
             setCanFetch(true);
