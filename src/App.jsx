@@ -101,6 +101,7 @@ function App() {
                 setLoginFailMsg(res.msg);
             }
         }).catch((e) => {
+            console.log('fail to login');
             console.log(e);
         })
     }
