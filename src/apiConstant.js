@@ -1,3 +1,3 @@
-const basedAPI = 'http://localhost:3000'
+const basedAPI = 'https://memberonly-backend-production.up.railway.app'
 
 export {basedAPI}
